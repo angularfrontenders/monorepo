@@ -1,0 +1,21 @@
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+  <img  alt="Angular Frontenders" src="../assets/angular-frontenders.png">
+</div>
+<h2>Uses:</h2>
+<ul>
+  <li>
+    <h2><pre ngNonBindable>Case 1: id="{{id}}_case1Inner"</pre></h2>
+    <app-case1-outer id="case1Outer"></app-case1-outer>
+  </li>
+  <li>
+    <h2><pre ngNonBindable>Case 2: [id]="resultId"</pre></h2>
+    <app-case2-outer id="case2Outer"></app-case2-outer>
+  </li>
+  <li>
+    <h2><pre ngNonBindable>Case 3: [attr.id]="resultId"</pre></h2>
+    <app-case3-outer id="case3Outer"></app-case3-outer>
+  </li>
+</ul>

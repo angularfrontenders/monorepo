@@ -1,0 +1,20 @@
+{
+  "es-ES": [
+    { "key": "TITLE", "value": "¡Bienvenido a Literales!" },
+    { "key": "ANGULARFRONTENDERS", "value": "Angular Frontenders" },
+    { "key": "HELLO.WORLD", "value": "¡Hola mundo!" },
+    {
+      "key": "FORMATS",
+      "value": "este es un test de formatos {0:k} -> cadena: {1}; fecha: {2:d[f:dd/MM/yyyy]}; moneda: {3:c}; número: {4:n}"
+    }
+  ],
+  "en-US": [
+    { "key": "TITLE", "value": "Welcome to Literals!" },
+    { "key": "ANGULARFRONTENDERS", "value": "Angular Frontenders" },
+    { "key": "HELLO.WORLD", "value": "Hello world!" },
+    {
+      "key": "FORMATS",
+      "value": "this is a formats test {0:k} -> string: {1}; date: {2:d[f:dd/MM/yyyy]}; currency: {3:c}; number: {4:n}"
+    }
+  ]
+}
