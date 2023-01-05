@@ -7,6 +7,6 @@ import { Component, Input } from '@angular/core';
 })
 export class Case1InnerComponent {
 
-  @Input() public id: string = null;
+  @Input() public id: string = '';
 
 }

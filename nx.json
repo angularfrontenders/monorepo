@@ -26,13 +26,38 @@
       ],
       "outputs": [
         "{projectRoot}/coverage"
+      ],
+      "inputs": [
+        "default",
+        "^default",
+        "{workspaceRoot}/karma.conf.js"
       ]
     },
     "lint": {
       "dependsOn": [
         "^lint"
+      ],
+      "inputs": [
+        "default",
+        "{workspaceRoot}/.eslintrc.json"
       ]
     }
   },
-  "defaultBase": "master"
+  "defaultBase": "master",
+  "generators": {
+    "@nrwl/angular:application": {
+      "style": "css",
+      "linter": "eslint",
+      "unitTestRunner": "karma",
+      "e2eTestRunner": "none"
+    },
+    "@nrwl/angular:library": {
+      "linter": "eslint",
+      "unitTestRunner": "karma"
+    },
+    "@nrwl/angular:component": {
+      "style": "css"
+    }
+  },
+  "defaultProject": "fake"
 }
