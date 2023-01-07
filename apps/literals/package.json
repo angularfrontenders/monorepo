@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "json-server": "npx json-server --watch db.json",
+    "json-server": "npx --yes json-server --watch db.json",
     "start-all": "npm run json-server | npm start"
   },
   "private": true

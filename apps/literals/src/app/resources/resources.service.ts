@@ -16,13 +16,13 @@ export class ResourcesService {
 
   public load() {
     this._dictionary = [];
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
       this._dataService.getResources().subscribe(
         (resources: Array<ITextResource>) => {
           this._dictionary = resources;
           resolve(true);
         },
-        err => {
+        () => {
           console.log('not server found. Get default resources...');
           this._dictionary = [
             {
