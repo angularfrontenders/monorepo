@@ -53,11 +53,8 @@ export class DateStrategy implements ITranslateStrategy {
     if (!parametersExp || !parametersExp.groups.parameters) {
       return dateParameters;
     }
-    //
-    const parameters: string = parametersExp.groups.parameters.replace(
-      /[\[\]']+/g,
-      ''
-    );
+    //eslint-disable-next-line
+    const parameters: string = parametersExp.groups.parameters.replace(/[\[\]']+/g, '');
 
     // Get format
     const regFormatExp: RegExpExecArray = /f(ormat)?:(?<format>([^;])*)/.exec(

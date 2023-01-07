@@ -7,6 +7,6 @@ import { Component, Input } from '@angular/core';
 })
 export class Case1OuterComponent {
 
-  @Input() public id: string = '';
+  @Input() public id = '';
 
 }
