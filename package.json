@@ -4,6 +4,7 @@
   "description": "monorepo containing post examples",
   "main": "index.js",
   "scripts": {
+    "build:all:production": "npx nx run-many --target build --configuration=production --parallel --all",
     "test": "echo \"Error: no test specified\" && exit 1",
     "postinstall": "ngcc"
   },
