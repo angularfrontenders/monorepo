@@ -60,6 +60,9 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "literals:build:production"
+          },
           "configurations": {
             "production": {
               "browserTarget": "identifiers:build:production"
@@ -104,7 +107,6 @@
       "root": "apps/literals",
       "sourceRoot": "apps/literals/src",
       "prefix": "app",
-      "schematics": {},
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
