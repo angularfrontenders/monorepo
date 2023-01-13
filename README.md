@@ -12,6 +12,7 @@ Run `npm run build:all:production` to build all apps. Or you can start an app ru
 * identifiers
 * literals (need to execute json-server or exectute all with `npx nx run literals:start-all`)
 * mappers
+* memento-pattern
 * strategy-pattern
 
 ## Understand this workspace
