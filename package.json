@@ -4,8 +4,12 @@
   "description": "monorepo containing post examples",
   "main": "index.js",
   "scripts": {
+     "ng": "nx",
+    "start": "nx serve",
+    "build": "nx build",
+    "test": "nx test",
+    "lint": "nx lint",
     "build:all:production": "npx nx run-many --target build --configuration=production --parallel --all",
-    "test": "echo \"Error: no test specified\" && exit 1",
     "postinstall": "ngcc"
   },
   "keywords": [
