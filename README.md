@@ -11,6 +11,7 @@ Run `npm run build:all:production` to build all apps. Or you can start an app ru
 ### Current apps in monorepo:
 * identifiers
 * literals (need to execute json-server or exectute all with `npx nx run literals:start-all`)
+* strategy-pattern
 
 ## Understand this workspace
 
