@@ -1,0 +1,31 @@
+<div style="text-align:center">
+    <h1>
+        Welcome to {{ title }}!
+    </h1>
+    <img alt="Angular Frontenders" src="../assets/angular-frontenders.png">
+</div>
+<h2>Entity:</h2>
+{{ readEntities[0] | json }}
+<h2>Uses:</h2>
+<ul>
+    <li>
+        <h2>Map one entity</h2>
+        {{ entity | json }}
+    </li>
+    <li>
+        <h2>Map array of entities</h2>
+        {{ entities | json }}
+    </li>
+    <li>
+        <h2>Map array of entities Observable</h2>
+        {{ entitiesOf$ | async | json }}
+    </li>
+   
+    <li>
+        <h2>Map array from entities Observable</h2>
+        <div *ngFor="let entity of entitiesFrom; trackBy:entityId">
+            {{ entity | json }}
+        </div>
+        
+    </li>
+</ul>
