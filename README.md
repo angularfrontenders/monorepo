@@ -9,6 +9,7 @@
 Run `npm run build:all:production` to build all apps. Or you can start an app running `npx nx serve [appName]` and navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
 
 ### Current apps in monorepo:
+* builder-pattern
 * command-pattern
 * command-pattern-manager
 * command-pattern-manager-queue

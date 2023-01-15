@@ -1,0 +1,11 @@
+<div style="text-align:center">
+  <h1>
+    {{ title }}
+  </h1>
+  <img src="../assets/angular-frontenders.png" />
+</div>
+<h2>Default Invoice</h2>
+{{ invoiceDefault | json }}
+<h2>Invoice</h2>
+{{ invoice | json }}
+<router-outlet></router-outlet>
