@@ -796,8 +796,7 @@
               "apps/literals/src/styles.css"
             ],
             "scripts": [],
-            "assets": [
-            ]
+            "assets": []
           }
         },
         "lint": {
@@ -1011,7 +1010,7 @@
         }
       }
     },
-    "strategy-pattern":{
+    "strategy-pattern": {
       "projectType": "application",
       "root": "apps/strategy-pattern",
       "sourceRoot": "apps/strategy-pattern/src",
@@ -1111,6 +1110,5 @@
         }
       }
     }
-    
   }
 }

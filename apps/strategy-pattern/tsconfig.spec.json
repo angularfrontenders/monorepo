@@ -5,7 +5,9 @@
     "types": [
       "jasmine",
       "node"
-    ]
+    ],
+    "target": "ES2022",
+    "useDefineForClassFields": false
   },
   "files": [
     "src/test.ts",
@@ -14,6 +16,7 @@
   "include": [
     "**/*.spec.ts",
     "**/*.test.ts",
-    "**/*.d.ts"
-, "src/app/pattern/iConfiguration.ts"  ]
+    "**/*.d.ts",
+    "src/app/pattern/iConfiguration.ts"
+  ]
 }
