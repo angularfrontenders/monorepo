@@ -1,0 +1,101 @@
+{
+  "name": "strategy-pattern",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/strategy-pattern/src",
+  "prefix": "app",
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "options": {
+        "outputPath": "dist/apps/strategy-pattern",
+        "index": "apps/strategy-pattern/src/index.html",
+        "main": "apps/strategy-pattern/src/main.ts",
+        "polyfills": "apps/strategy-pattern/src/polyfills.ts",
+        "tsConfig": "apps/strategy-pattern/tsconfig.app.json",
+        "assets": [
+          "apps/strategy-pattern/src/favicon.ico",
+          "apps/strategy-pattern/src/assets"
+        ],
+        "styles": [
+          "apps/strategy-pattern/src/styles.css"
+        ],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "fileReplacements": [
+            {
+              "replace": "apps/strategy-pattern/src/environments/environment.ts",
+              "with": "apps/strategy-pattern/src/environments/environment.prod.ts"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "options": {
+        "browserTarget": "strategy-pattern:build:production"
+      },
+      "configurations": {
+        "production": {
+          "browserTarget": "strategy-pattern:build:production"
+        },
+        "development": {
+          "browserTarget": "strategy-pattern:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "strategy-pattern:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "apps/strategy-pattern/**/*.ts",
+          "apps/strategy-pattern/**/*.html"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@angular-devkit/build-angular:karma",
+      "options": {
+        "main": "apps/strategy-pattern/src/test.ts",
+        "tsConfig": "apps/strategy-pattern/tsconfig.spec.json",
+        "karmaConfig": "apps/strategy-pattern/karma.conf.js",
+        "polyfills": "apps/strategy-pattern/src/polyfills.ts",
+        "styles": [],
+        "scripts": [],
+        "assets": []
+      }
+    }
+  }
+}

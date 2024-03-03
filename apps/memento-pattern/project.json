@@ -1,0 +1,101 @@
+{
+  "name": "memento-pattern",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/memento-pattern/src",
+  "prefix": "app",
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "options": {
+        "outputPath": "dist/apps/memento-pattern",
+        "index": "apps/memento-pattern/src/index.html",
+        "main": "apps/memento-pattern/src/main.ts",
+        "polyfills": "apps/memento-pattern/src/polyfills.ts",
+        "tsConfig": "apps/memento-pattern/tsconfig.app.json",
+        "assets": [
+          "apps/memento-pattern/src/favicon.ico",
+          "apps/memento-pattern/src/assets"
+        ],
+        "styles": [
+          "apps/memento-pattern/src/styles.css"
+        ],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "fileReplacements": [
+            {
+              "replace": "apps/memento-pattern/src/environments/environment.ts",
+              "with": "apps/memento-pattern/src/environments/environment.prod.ts"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "options": {
+        "browserTarget": "memento-pattern:build:production"
+      },
+      "configurations": {
+        "production": {
+          "browserTarget": "memento-pattern:build:production"
+        },
+        "development": {
+          "browserTarget": "memento-pattern:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "memento-pattern:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "apps/memento-pattern/**/*.ts",
+          "apps/memento-pattern/**/*.html"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@angular-devkit/build-angular:karma",
+      "options": {
+        "main": "apps/memento-pattern/src/test.ts",
+        "tsConfig": "apps/memento-pattern/tsconfig.spec.json",
+        "karmaConfig": "apps/memento-pattern/karma.conf.js",
+        "polyfills": "apps/memento-pattern/src/polyfills.ts",
+        "styles": [],
+        "scripts": [],
+        "assets": []
+      }
+    }
+  }
+}
