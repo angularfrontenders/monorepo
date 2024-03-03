@@ -1,0 +1,101 @@
+{
+  "name": "command-pattern-manager",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/command-pattern-manager/src",
+  "prefix": "app",
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "options": {
+        "outputPath": "dist/apps/command-pattern-manager",
+        "index": "apps/command-pattern-manager/src/index.html",
+        "main": "apps/command-pattern-manager/src/main.ts",
+        "polyfills": "apps/command-pattern-manager/src/polyfills.ts",
+        "tsConfig": "apps/command-pattern-manager/tsconfig.app.json",
+        "assets": [
+          "apps/command-pattern-manager/src/favicon.ico",
+          "apps/command-pattern-manager/src/assets"
+        ],
+        "styles": [
+          "apps/command-pattern-manager/src/styles.css"
+        ],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "fileReplacements": [
+            {
+              "replace": "apps/command-pattern-manager/src/environments/environment.ts",
+              "with": "apps/command-pattern-manager/src/environments/environment.prod.ts"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "options": {
+        "browserTarget": "command-pattern-manager:build:production"
+      },
+      "configurations": {
+        "production": {
+          "browserTarget": "command-pattern-manager:build:production"
+        },
+        "development": {
+          "browserTarget": "command-pattern-manager:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "command-pattern-manager:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "apps/command-pattern-manager/**/*.ts",
+          "apps/command-pattern-manager/**/*.html"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@angular-devkit/build-angular:karma",
+      "options": {
+        "main": "apps/command-pattern-manager/src/test.ts",
+        "tsConfig": "apps/command-pattern-manager/tsconfig.spec.json",
+        "karmaConfig": "apps/command-pattern-manager/karma.conf.js",
+        "polyfills": "apps/command-pattern-manager/src/polyfills.ts",
+        "styles": [],
+        "scripts": [],
+        "assets": []
+      }
+    }
+  }
+}

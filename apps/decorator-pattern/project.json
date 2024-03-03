@@ -1,0 +1,103 @@
+{
+  "name": "decorator-pattern",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/decorator-pattern/src",
+  "prefix": "app",
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "options": {
+        "outputPath": "dist/apps/decorator-pattern",
+        "index": "apps/decorator-pattern/src/index.html",
+        "main": "apps/decorator-pattern/src/main.ts",
+        "polyfills": "apps/decorator-pattern/src/polyfills.ts",
+        "tsConfig": "apps/decorator-pattern/tsconfig.app.json",
+        "assets": [
+          "apps/decorator-pattern/src/favicon.ico",
+          "apps/decorator-pattern/src/assets"
+        ],
+        "styles": [
+          "apps/decorator-pattern/src/styles.css"
+        ],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "fileReplacements": [
+            {
+              "replace": "apps/decorator-pattern/src/environments/environment.ts",
+              "with": "apps/decorator-pattern/src/environments/environment.prod.ts"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "options": {
+        "browserTarget": "decorator-pattern:build:production"
+      },
+      "configurations": {
+        "production": {
+          "browserTarget": "decorator-pattern:build:production"
+        },
+        "development": {
+          "browserTarget": "decorator-pattern:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "decorator-pattern:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "apps/decorator-pattern/**/*.ts",
+          "apps/decorator-pattern/**/*.html"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@angular-devkit/build-angular:karma",
+      "options": {
+        "main": "apps/decorator-pattern/src/test.ts",
+        "tsConfig": "apps/decorator-pattern/tsconfig.spec.json",
+        "karmaConfig": "apps/decorator-pattern/karma.conf.js",
+        "polyfills": "apps/decorator-pattern/src/polyfills.ts",
+        "styles": [],
+        "scripts": [],
+        "assets": [
+          "apps/decorator-pattern/src/assets"
+        ]
+      }
+    }
+  }
+}
