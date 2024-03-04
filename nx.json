@@ -45,17 +45,15 @@
   },
   "defaultBase": "master",
   "generators": {
-    "@nrwl/angular:application": {
+    "@nx/angular:application": {
       "style": "css",
       "linter": "eslint",
-      "unitTestRunner": "karma",
       "e2eTestRunner": "none"
     },
-    "@nrwl/angular:library": {
-      "linter": "eslint",
-      "unitTestRunner": "karma"
+    "@nx/angular:library": {
+      "linter": "eslint"
     },
-    "@nrwl/angular:component": {
+    "@nx/angular:component": {
       "style": "css"
     }
   },
