@@ -11,7 +11,8 @@
     "lint": "nx lint",
     "build:all:production": "npx nx run-many --target build --configuration=production --parallel --all",
     "test:all": "npx nx run-many --target test --parallel --all --exclude=command-pattern-manager",
-    "lint:all": "npx nx run-many --target lint --parallel --all"
+    "lint:all": "npx nx run-many --target lint --parallel --all",
+    "storybook": "npx nx run storybook-host:storybook"
   },
   "keywords": [
     "monorepo",
