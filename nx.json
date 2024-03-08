@@ -1,46 +1,24 @@
 {
   "targetDefaults": {
     "build": {
-      "dependsOn": [
-        "^build"
-      ],
-      "outputs": [
-        "{projectRoot}/dist"
-      ],
+      "dependsOn": ["^build"],
+      "outputs": ["{projectRoot}/dist"],
       "cache": true
     },
     "test": {
-      "dependsOn": [
-        "^test"
-      ],
-      "outputs": [
-        "{projectRoot}/coverage"
-      ],
-      "inputs": [
-        "default",
-        "^default",
-        "{workspaceRoot}/karma.conf.js"
-      ],
+      "dependsOn": ["^test"],
+      "outputs": ["{projectRoot}/coverage"],
+      "inputs": ["default", "^default", "{workspaceRoot}/karma.conf.js"],
       "cache": true
     },
     "lint": {
-      "dependsOn": [
-        "^lint"
-      ],
-      "inputs": [
-        "default",
-        "{workspaceRoot}/.eslintrc.json"
-      ],
+      "dependsOn": ["^lint"],
+      "inputs": ["default", "{workspaceRoot}/.eslintrc.json"],
       "cache": true
     },
     "@nx/eslint:lint": {
-      "dependsOn": [
-        "^lint"
-      ],
-      "inputs": [
-        "default",
-        "{workspaceRoot}/.eslintrc.json"
-      ],
+      "dependsOn": ["^lint"],
+      "inputs": ["default", "{workspaceRoot}/.eslintrc.json"],
       "cache": true
     }
   },
@@ -52,7 +30,8 @@
       "e2eTestRunner": "none"
     },
     "@nx/angular:library": {
-      "linter": "eslint"
+      "linter": "eslint",
+      "unitTestRunner": "none"
     },
     "@nx/angular:component": {
       "style": "css"
