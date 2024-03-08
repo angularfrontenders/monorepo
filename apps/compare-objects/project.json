@@ -58,14 +58,14 @@
     "serve": {
       "executor": "@angular-devkit/build-angular:dev-server",
       "options": {
-        "browserTarget": "compare-objects:build:production"
+        "buildTarget": "compare-objects:build:production"
       },
       "configurations": {
         "production": {
-          "browserTarget": "compare-objects:build:production"
+          "buildTarget": "compare-objects:build:production"
         },
         "development": {
-          "browserTarget": "compare-objects:build:development"
+          "buildTarget": "compare-objects:build:development"
         }
       },
       "defaultConfiguration": "development"
@@ -73,17 +73,11 @@
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
       "options": {
-        "browserTarget": "compare-objects:build"
+        "buildTarget": "compare-objects:build"
       }
     },
     "lint": {
-      "executor": "@nx/linter:eslint",
-      "options": {
-        "lintFilePatterns": [
-          "apps/compare-objects/**/*.ts",
-          "apps/compare-objects/**/*.html"
-        ]
-      }
+      "executor": "@nx/eslint:lint"
     },
     "test": {
       "executor": "@angular-devkit/build-angular:karma",

@@ -58,14 +58,14 @@
     "serve": {
       "executor": "@angular-devkit/build-angular:dev-server",
       "options": {
-        "browserTarget": "decorator-pattern:build:production"
+        "buildTarget": "decorator-pattern:build:production"
       },
       "configurations": {
         "production": {
-          "browserTarget": "decorator-pattern:build:production"
+          "buildTarget": "decorator-pattern:build:production"
         },
         "development": {
-          "browserTarget": "decorator-pattern:build:development"
+          "buildTarget": "decorator-pattern:build:development"
         }
       },
       "defaultConfiguration": "development"
@@ -73,17 +73,11 @@
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
       "options": {
-        "browserTarget": "decorator-pattern:build"
+        "buildTarget": "decorator-pattern:build"
       }
     },
     "lint": {
-      "executor": "@nx/linter:eslint",
-      "options": {
-        "lintFilePatterns": [
-          "apps/decorator-pattern/**/*.ts",
-          "apps/decorator-pattern/**/*.html"
-        ]
-      }
+      "executor": "@nx/eslint:lint"
     },
     "test": {
       "executor": "@angular-devkit/build-angular:karma",
