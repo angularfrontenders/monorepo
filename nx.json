@@ -20,6 +20,15 @@
       "dependsOn": ["^lint"],
       "inputs": ["default", "{workspaceRoot}/.eslintrc.json"],
       "cache": true
+    },
+    "build-storybook": {
+      "cache": true,
+      "inputs": [
+        "default",
+        "^default",
+        "{projectRoot}/.storybook/**/*",
+        "{projectRoot}/tsconfig.storybook.json"
+      ]
     }
   },
   "defaultBase": "master",
@@ -37,5 +46,12 @@
       "style": "css"
     }
   },
-  "defaultProject": "identifiers"
+  "defaultProject": "identifiers",
+  "tasksRunnerOptions": {
+    "default": {
+      "options": {
+        "cacheableOperations": ["build-storybook"]
+      }
+    }
+  }
 }

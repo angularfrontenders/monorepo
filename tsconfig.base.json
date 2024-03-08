@@ -20,7 +20,8 @@
     "paths": {
       "storybook-host": ["libs/storybook-host/src/index.ts"]
     },
-    "rootDir": "."
+    "rootDir": ".",
+    "skipLibCheck": true
   },
   "exclude": ["node_modules", "tmp"]
 }
