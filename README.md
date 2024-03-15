@@ -21,9 +21,13 @@ Run `npm run build:all:production` to build all apps. Or you can start an app ru
 * memento-pattern
 * strategy-pattern
 
+### Storybook
+
+Run `npx nx run storybook-host:storybook` to start storybook
+
 ## Understand this workspace
 
-Run `nx graph` to see a diagram of the dependencies of the projects.
+Run `npx nx graph` to see a diagram of the dependencies of the projects.
 
 ## Remote caching
 
