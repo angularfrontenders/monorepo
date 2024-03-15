@@ -1,45 +1,33 @@
 {
-  "tasksRunnerOptions": {
-    "default": {
-      "runner": "nx/tasks-runners/default",
-      "options": {
-        "cacheableOperations": [
-          "build",
-          "test",
-          "lint"
-        ]
-      }
-    }
-  },
   "targetDefaults": {
     "build": {
-      "dependsOn": [
-        "^build"
-      ],
-      "outputs": [
-        "{projectRoot}/dist"
-      ]
+      "dependsOn": ["^build"],
+      "outputs": ["{projectRoot}/dist"],
+      "cache": true
     },
     "test": {
-      "dependsOn": [
-        "^test"
-      ],
-      "outputs": [
-        "{projectRoot}/coverage"
-      ],
+      "dependsOn": ["^test"],
+      "outputs": ["{projectRoot}/coverage"],
+      "inputs": ["default", "^default", "{workspaceRoot}/karma.conf.js"],
+      "cache": true
+    },
+    "lint": {
+      "dependsOn": ["^lint"],
+      "inputs": ["default", "{workspaceRoot}/.eslintrc.json"],
+      "cache": true
+    },
+    "@nx/eslint:lint": {
+      "dependsOn": ["^lint"],
+      "inputs": ["default", "{workspaceRoot}/.eslintrc.json"],
+      "cache": true
+    },
+    "build-storybook": {
+      "cache": true,
       "inputs": [
         "default",
         "^default",
-        "{workspaceRoot}/karma.conf.js"
-      ]
-    },
-    "lint": {
-      "dependsOn": [
-        "^lint"
-      ],
-      "inputs": [
-        "default",
-        "{workspaceRoot}/.eslintrc.json"
+        "{projectRoot}/.storybook/**/*",
+        "{projectRoot}/tsconfig.storybook.json"
       ]
     }
   },
@@ -51,11 +39,19 @@
       "e2eTestRunner": "none"
     },
     "@nx/angular:library": {
-      "linter": "eslint"
+      "linter": "eslint",
+      "unitTestRunner": "none"
     },
     "@nx/angular:component": {
       "style": "css"
     }
   },
-  "defaultProject": "identifiers"
+  "defaultProject": "identifiers",
+  "tasksRunnerOptions": {
+    "default": {
+      "options": {
+        "cacheableOperations": ["build-storybook"]
+      }
+    }
+  }
 }

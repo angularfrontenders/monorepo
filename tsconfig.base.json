@@ -15,18 +15,13 @@
     "moduleResolution": "node",
     "experimentalDecorators": true,
     "target": "es2020",
-    "typeRoots": [
-      "node_modules/@types"
-    ],
-    "lib": [
-      "es2018",
-      "dom"
-    ],
-    "paths": {},
-    "rootDir": "."
+    "typeRoots": ["node_modules/@types"],
+    "lib": ["es2018", "dom"],
+    "paths": {
+      "storybook-host": ["libs/storybook-host/src/index.ts"]
+    },
+    "rootDir": ".",
+    "skipLibCheck": true
   },
-  "exclude": [
-    "node_modules",
-    "tmp"
-  ]
+  "exclude": ["node_modules", "tmp"]
 }

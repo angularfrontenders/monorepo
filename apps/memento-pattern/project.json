@@ -58,14 +58,14 @@
     "serve": {
       "executor": "@angular-devkit/build-angular:dev-server",
       "options": {
-        "browserTarget": "memento-pattern:build:production"
+        "buildTarget": "memento-pattern:build:production"
       },
       "configurations": {
         "production": {
-          "browserTarget": "memento-pattern:build:production"
+          "buildTarget": "memento-pattern:build:production"
         },
         "development": {
-          "browserTarget": "memento-pattern:build:development"
+          "buildTarget": "memento-pattern:build:development"
         }
       },
       "defaultConfiguration": "development"
@@ -73,17 +73,11 @@
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
       "options": {
-        "browserTarget": "memento-pattern:build"
+        "buildTarget": "memento-pattern:build"
       }
     },
     "lint": {
-      "executor": "@nx/linter:eslint",
-      "options": {
-        "lintFilePatterns": [
-          "apps/memento-pattern/**/*.ts",
-          "apps/memento-pattern/**/*.html"
-        ]
-      }
+      "executor": "@nx/eslint:lint"
     },
     "test": {
       "executor": "@angular-devkit/build-angular:karma",
