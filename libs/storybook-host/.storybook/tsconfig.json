@@ -6,7 +6,7 @@
   "exclude": ["../**/*.spec.ts"],
   "include": [
     "../../../libs/**/*.stories.ts",
-    ".js",  
-    ".ts"
+    "*.js",  
+    "*.ts"
   ]
 }

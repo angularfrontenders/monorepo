@@ -7,8 +7,8 @@ const preview: Preview = {
         order: ['Documentation', 'Components'],
       },
     },
-    controls: { expanded: true },
-  },
+    controls: { expanded: true }
+  }
 };
 
 export default preview;

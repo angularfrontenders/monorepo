@@ -3,10 +3,10 @@ import type { StorybookConfig } from '@storybook/angular';
 
 const config: StorybookConfig = {
   stories: [
-   '../../../libs/**/**.mdx',
+    '../../../libs/**/*.mdx',
     '../../../libs/**/*.stories.@(js|jsx|ts|tsx)'
-],
-   addons: [
+  ],
+  addons: [
     '@storybook/addon-essentials',
     '@storybook/addon-docs',
     '@storybook/addon-a11y',
@@ -17,12 +17,11 @@ const config: StorybookConfig = {
     name: '@storybook/angular',
     options: {},
   },
- docs: {
+  docs: {
     autodocs: 'tag',
     defaultName: 'Documentation'
   }
 };
-
 
 export default config;
 
