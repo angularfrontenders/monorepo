@@ -52,6 +52,13 @@
         "plugin:@nx/javascript"
       ],
       "rules": {}
+    },
+    {
+      "files": ["*.mdx"],
+      "extends": ["plugin:mdx/recommended"],
+      "settings": {
+        "mdx/code-blocks": true
+      }
     }
   ]
 }
