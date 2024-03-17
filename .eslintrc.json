@@ -38,7 +38,8 @@
         "*.tsx"
       ],
       "extends": [
-        "plugin:@nx/typescript"
+        "plugin:@nx/typescript",
+        "plugin:storybook/recommended"
       ],
       "rules": {}
     },
