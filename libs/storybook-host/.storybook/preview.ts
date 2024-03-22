@@ -1,4 +1,5 @@
 import type { Preview } from '@storybook/angular';
+import afTheme  from './theme';
 
 const preview: Preview = {
   parameters: {
@@ -7,7 +8,10 @@ const preview: Preview = {
         order: ['Documentation', 'Components'],
       },
     },
-    controls: { expanded: true }
+    controls: { expanded: true },
+    docs: {
+      theme: afTheme
+    }
   }
 };
 
