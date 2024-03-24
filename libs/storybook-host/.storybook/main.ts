@@ -24,6 +24,7 @@ const config: StorybookConfig = {
     { from: '../src/assets/angular-frontenders-icon.svg', to: 'favicon.svg' },
     { from: '../src/assets', to: '/assets' },
     { from: '../src/fonts', to: '/fonts' },
+    { from: '../src/styles/af-typography.css', to: 'af-typography.css' },
   ],
 };
 

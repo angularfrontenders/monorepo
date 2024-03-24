@@ -2,7 +2,7 @@ import { create } from '@storybook/theming/create';
 
 export default create({
   base: 'light',
-  fontBase: '"Fira Sans", "Open Sans", sans-serif',
+  fontBase: 'Roboto, "Open Sans", sans-serif',
   fontCode: 'monospace',
   brandTitle: 'Angular Frontenders | Experience',
   brandUrl: 'https://angularfrontenders.com',
