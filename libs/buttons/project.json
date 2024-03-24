@@ -1,0 +1,29 @@
+{
+  "name": "buttons",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/buttons/src",
+  "prefix": "af",
+  "tags": ["ui"],
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/angular:package",
+      "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
+      "options": {
+        "project": "libs/buttons/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/buttons/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/buttons/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    }
+  }
+}

@@ -15,6 +15,7 @@ type Story = StoryObj<StorybookHostComponent>;
  * to learn how to use render functions.
  */
 export const Primary: Story = {
+  tags: ['hidden'],
   render: () => ({
     props: {
       label: 'StorybookHostComponent',
