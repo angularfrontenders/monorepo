@@ -1,5 +1,5 @@
 import type { Preview } from '@storybook/angular';
-import afTheme  from './theme';
+import afTheme  from './af-theme';
 
 const preview: Preview = {
   parameters: {
