@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+export type buttonType = 'primary' | 'secondary';
 @Component({
   selector: 'af-text-button',
   standalone: true,
@@ -9,5 +10,6 @@ import { CommonModule } from '@angular/common';
   styleUrl: './text-button.component.scss',
 })
 export class TextButtonComponent {
-  @Input() text = '';
+  @Input() label = '';
+  @Input() type: buttonType = 'primary';
 }
