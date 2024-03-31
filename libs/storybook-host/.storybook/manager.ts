@@ -1,5 +1,5 @@
 import { addons } from '@storybook/manager-api';
-import afTheme  from './af-theme';
+import afTheme  from './themes/af-theme';
 
 addons.setConfig({
   sidebar: {
