@@ -2,6 +2,12 @@ import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 export type buttonType = 'primary' | 'secondary';
+
+/**
+ * Botón rectangular que contiene un texto indicando la acción. Además puede visualizarse de dos maneras para indicar su propósito:
+ * primario o secundario. 
+ * @author Angular frontenders
+*/
 @Component({
   selector: 'af-text-button',
   standalone: true,

@@ -18,7 +18,7 @@ const config: StorybookConfig = {
   },
   docs: {
     autodocs: 'tag',
-    defaultName: 'Documentation',
+    defaultName: 'Documentación',
   },
   staticDirs: [
     { from: '../src/assets/angular-frontenders-icon.svg', to: 'favicon.svg' },
