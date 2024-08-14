@@ -12,7 +12,8 @@
     "build:all:production": "npx nx run-many --target build --configuration=production --parallel --all",
     "test:all": "npx nx run-many --target test --parallel --all --exclude=command-pattern-manager",
     "lint:all": "npx nx run-many --target lint --parallel --all",
-    "storybook": "npx nx run storybook-host:storybook"
+    "storybook": "npx nx run storybook-host:storybook",
+    "prepare": "husky"
   },
   "keywords": [
     "monorepo",
@@ -86,6 +87,7 @@
     "eslint-plugin-mdx": "^3.1.5",
     "eslint-plugin-prefer-arrow": "latest",
     "eslint-plugin-storybook": "^0.8.0",
+    "husky": "^9.1.4",
     "jasmine-core": "~4.5.0",
     "jasmine-spec-reporter": "~7.0.0",
     "jsonc-eslint-parser": "^2.1.0",
