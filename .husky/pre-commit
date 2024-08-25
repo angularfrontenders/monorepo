@@ -1,1 +1,1 @@
-# npm
+npx --no lint-staged --concurrent false
