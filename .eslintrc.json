@@ -1,19 +1,10 @@
 {
   "root": true,
-  "ignorePatterns": [
-    "**/*"
-  ],
-  "plugins": [
-    "@nx"
-  ],
+  "ignorePatterns": ["**/*"],
+  "plugins": ["@nx", "prettier"],
   "overrides": [
     {
-      "files": [
-        "*.ts",
-        "*.tsx",
-        "*.js",
-        "*.jsx"
-      ],
+      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
       "rules": {
         "@nx/enforce-module-boundaries": [
           "error",
@@ -23,9 +14,7 @@
             "depConstraints": [
               {
                 "sourceTag": "*",
-                "onlyDependOnLibsWithTags": [
-                  "*"
-                ]
+                "onlyDependOnLibsWithTags": ["*"]
               }
             ]
           }
@@ -33,24 +22,15 @@
       }
     },
     {
-      "files": [
-        "*.ts",
-        "*.tsx"
-      ],
-      "extends": [
-        "plugin:@nx/typescript",
-        "plugin:storybook/recommended"
-      ],
-      "rules": {}
+      "files": ["*.ts", "*.tsx"],
+      "extends": ["plugin:@nx/typescript", "plugin:storybook/recommended"],
+      "rules": {
+        "prettier/prettier": ["warn", { "parser": "angular" }]
+      }
     },
     {
-      "files": [
-        "*.js",
-        "*.jsx"
-      ],
-      "extends": [
-        "plugin:@nx/javascript"
-      ],
+      "files": ["*.js", "*.jsx"],
+      "extends": ["plugin:@nx/javascript"],
       "rules": {}
     },
     {

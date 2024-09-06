@@ -1,3 +1,33 @@
 {
-  "singleQuote": true
+  "tabWidth": 2,
+  "endOfLine": "crlf",
+  "semi": true,
+  "singleQuote": true,
+  "trailingComma": "none",
+  "bracketSpacing": true,
+  "overrides": [
+    {
+      "files": "*.ts",
+      "options": {
+        "tabWidth": 4,
+        "arrowParens": "always",
+        "printWidth": 140,
+        "quoteProps": "preserve"
+      }
+    },
+    {
+      "files": "*.html",
+      "options": {
+        "tabWidth": 4,
+        "singleQuote": false,
+        "bracketSameLine": true
+      }
+    },
+    {
+      "files": ["*.less", "*.css", "*.scss"],
+      "options": {
+        "singleQuote": false
+      }
+    }
+  ]
 }
