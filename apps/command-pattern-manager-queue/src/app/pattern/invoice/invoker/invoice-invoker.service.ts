@@ -10,30 +10,26 @@ import { IInvoice } from '../../iInvoice';
 import { ICommand } from '../../iCommand';
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root'
 })
 export class InvoiceInvokerService extends InvokerService implements IInvoiceInvokerService {
+    private _queue: Queue = new Queue();
 
-  private _queue: Queue = new Queue();
-
-  public constructor(private _commandManagerService: CommandManagerService) {
-    super();
-  }
-
-  public invokeInvoiceCommand(commandName: CommandName): void {
-    const commandService: ICommandService | undefined = this._commandManagerService.getCommand(commandName);
-    const command: ICommand | undefined = commandService?.build();
-    if (!this.isCommand(command)) {
-      throw new Error('No command!');
+    public constructor(private _commandManagerService: CommandManagerService) {
+        super();
     }
 
-    if (command.enqueue()){
-      this._queue.enqueue(command);
-    }
-    else {
-        command.execute();
-    }
+    public invokeInvoiceCommand(commandName: CommandName): void {
+        const commandService: ICommandService | undefined = this._commandManagerService.getCommand(commandName);
+        const command: ICommand | undefined = commandService?.build();
+        if (!this.isCommand(command)) {
+            throw new Error('No command!');
+        }
 
-  }
-
+        if (command.enqueue()) {
+            this._queue.enqueue(command);
+        } else {
+            command.execute();
+        }
+    }
 }

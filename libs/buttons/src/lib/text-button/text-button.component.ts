@@ -5,17 +5,17 @@ export type buttonType = 'primary' | 'secondary';
 
 /**
  * Botón rectangular que contiene un texto indicando la acción. Además puede visualizarse de dos maneras para indicar su propósito:
- * primario o secundario. 
+ * primario o secundario.
  * @author Angular frontenders
-*/
+ */
 @Component({
-  selector: 'af-text-button',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './text-button.component.html',
-  styleUrl: './text-button.component.scss',
+    selector: 'af-text-button',
+    standalone: true,
+    imports: [CommonModule],
+    templateUrl: './text-button.component.html',
+    styleUrl: './text-button.component.scss'
 })
 export class TextButtonComponent {
-  @Input() label = '';
-  @Input() type: buttonType = 'primary';
+    @Input() label = '';
+    @Input() type: buttonType = 'primary';
 }

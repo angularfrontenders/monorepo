@@ -5,7 +5,6 @@ import { IEntity } from './iEntity';
 
 @Injectable()
 export class EntityMapperService extends MapperService<IReadEntity, IEntity> {
-
     protected map(entity: IReadEntity): IEntity {
         return {
             id: entity.id,
@@ -14,5 +13,4 @@ export class EntityMapperService extends MapperService<IReadEntity, IEntity> {
             birthDate: new Date(entity.birthDate)
         };
     }
-
 }

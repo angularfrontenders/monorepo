@@ -2,9 +2,8 @@
   "name": "@af/buttons",
   "version": "0.0.1",
   "peerDependencies": {
-    "@angular/common": "^17.1.0",
-    "@angular/core": "^17.1.0",
-    "@storybook/angular": "^7.5.3"
+    "@angular/common": "18.2.10",
+    "@angular/core": "18.2.10"
   },
   "sideEffects": false
 }

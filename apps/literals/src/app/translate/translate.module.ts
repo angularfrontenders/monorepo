@@ -7,18 +7,18 @@ import { TranslatePipe } from './translate.pipe';
 import * as strategies from './strategies/index';
 
 @NgModule({
-  declarations: [TranslatePipe],
-  exports: [TranslatePipe],
-  imports: [CommonModule, ResourcesModule],
-  providers: [
-    DatePipe,
-    CurrencyPipe,
-    DecimalPipe,
-    strategies.CurrencyStrategy,
-    strategies.DateStrategy,
-    strategies.NumberStrategy,
-    strategies.ResourceKeyStrategy,
-    strategies.StringStrategy
-  ]
+    declarations: [TranslatePipe],
+    exports: [TranslatePipe],
+    imports: [CommonModule, ResourcesModule],
+    providers: [
+        DatePipe,
+        CurrencyPipe,
+        DecimalPipe,
+        strategies.CurrencyStrategy,
+        strategies.DateStrategy,
+        strategies.NumberStrategy,
+        strategies.ResourceKeyStrategy,
+        strategies.StringStrategy
+    ]
 })
 export class TranslateModule {}

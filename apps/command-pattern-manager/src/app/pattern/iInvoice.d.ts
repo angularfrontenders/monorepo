@@ -1,9 +1,9 @@
 interface IIdentity<T> {
-    id: T
+    id: T;
 }
 
 export interface IInvoiceLine extends IIdentity<string> {
-    baseAmount:number;
+    baseAmount: number;
     tax: number;
     taxAmount: number;
 }

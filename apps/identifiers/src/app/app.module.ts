@@ -10,19 +10,17 @@ import { Case3InnerComponent } from './case3-inner/case3-inner.component';
 import { Case3OuterComponent } from './case3-outer/case3-outer.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    Case1OuterComponent,
-    Case1InnerComponent,
-    Case2OuterComponent,
-    Case2InnerComponent,
-    Case3InnerComponent,
-    Case3OuterComponent
-  ],
-  imports: [
-    BrowserModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        Case1OuterComponent,
+        Case1InnerComponent,
+        Case2OuterComponent,
+        Case2InnerComponent,
+        Case3InnerComponent,
+        Case3OuterComponent
+    ],
+    imports: [BrowserModule],
+    providers: [],
+    bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

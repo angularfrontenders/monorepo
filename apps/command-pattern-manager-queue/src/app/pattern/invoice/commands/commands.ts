@@ -1,4 +1,4 @@
 export enum CommandName {
-  CreateHeader = 'CreateHeader',
-  ModifyTotalAmount = 'ModifyTotalAmunt'
+    CreateHeader = 'CreateHeader',
+    ModifyTotalAmount = 'ModifyTotalAmunt'
 }

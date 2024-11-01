@@ -1,19 +1,19 @@
 import { TestBed } from '@angular/core/testing';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { DataService } from './data.service';
 
 describe('DataService', () => {
-  let service: DataService;
+    let service: DataService;
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({
-      providers:[DataService],
-      imports: [HttpClientModule],
+    beforeEach(() => {
+        TestBed.configureTestingModule({
+            imports: [],
+            providers: [DataService, provideHttpClient(withInterceptorsFromDi())]
+        });
+        service = TestBed.inject(DataService);
     });
-    service = TestBed.inject(DataService);
-  });
 
-  it('should be created', () => {
-    expect(service).toBeTruthy();
-  });
+    it('should be created', () => {
+        expect(service).toBeTruthy();
+    });
 });
