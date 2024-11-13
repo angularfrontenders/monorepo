@@ -12,7 +12,7 @@ export class ComplementTemplate extends SubscriberTemplate {
         return this._subscriber.getAmount() + super.getAmount();
     }
 
-    public  getDescription(): string {
+    public getDescription(): string {
         return this._subscriber.getDescription();
     }
 }

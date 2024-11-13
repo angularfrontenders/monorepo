@@ -5,13 +5,9 @@ import { AppComponent } from './app.component';
 import { EntityMapperService } from './mapper/entityMapper.service';
 
 @NgModule({
-    declarations: [
-        AppComponent
-    ],
-    imports: [
-        BrowserModule
-    ],
+    declarations: [AppComponent],
+    imports: [BrowserModule],
     providers: [EntityMapperService],
     bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

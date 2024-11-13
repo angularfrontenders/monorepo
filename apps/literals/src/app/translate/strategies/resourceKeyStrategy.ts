@@ -1,35 +1,31 @@
 import { Injectable } from '@angular/core';
 import { ITranslateStrategy } from './iTranslateStrategy';
-import {
-  ResourcesService,
-  ITextResource
-} from '../../resources/resources.service';
+import { ResourcesService, ITextResource } from '../../resources/resources.service';
 
 @Injectable()
 export class ResourceKeyStrategy implements ITranslateStrategy {
-  public constructor(private _resourcesService: ResourcesService) {}
+    public constructor(private _resourcesService: ResourcesService) {}
 
-  public canApply(index: number, text: string, value: any): boolean {
-    const regKey = this.getRegExp(index);
-    return regKey.test(text);
-  }
-
-  public apply(index: number, text: string, value: any): string {
-    if (!this.isString(value)) {
-      console.log(`TranslatePipe: value at position ${index} is not a string`);
-      return text;
+    public canApply(index: number, text: string, value: any): boolean {
+        const regKey = this.getRegExp(index);
+        return regKey.test(text);
     }
-    const regKey = this.getRegExp(index);
-    return text.replace(regKey, this.getResource(value));
-  }
 
-  private getResource(key: string): string {
-    const resource: ITextResource = this._resourcesService.get(key);
-    return resource.notFound ? key : resource.value;
-  }
+    public apply(index: number, text: string, value: any): string {
+        if (!this.isString(value)) {
+            console.log(`TranslatePipe: value at position ${index} is not a string`);
+            return text;
+        }
+        const regKey = this.getRegExp(index);
+        return text.replace(regKey, this.getResource(value));
+    }
 
-  private getRegExp = (index: number) => new RegExp(`{${index}:k}`, 'gm');
+    private getResource(key: string): string {
+        const resource: ITextResource = this._resourcesService.get(key);
+        return resource.notFound ? key : resource.value;
+    }
 
-  private isString = (value: any) => typeof value === 'string';
+    private getRegExp = (index: number) => new RegExp(`{${index}:k}`, 'gm');
 
+    private isString = (value: any) => typeof value === 'string';
 }

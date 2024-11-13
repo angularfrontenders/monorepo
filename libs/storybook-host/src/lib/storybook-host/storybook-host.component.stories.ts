@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/angular';
 import { StorybookHostComponent } from './storybook-host.component';
 
 const meta: Meta<StorybookHostComponent> = {
-  component: StorybookHostComponent,
+    component: StorybookHostComponent
 };
 
 export default meta;
@@ -15,11 +15,11 @@ type Story = StoryObj<StorybookHostComponent>;
  * to learn how to use render functions.
  */
 export const Primary: Story = {
-  tags: ['hidden'],
-  render: () => ({
-    props: {
-      label: 'StorybookHostComponent',
-      primary: true,
-    },
-  }),
+    tags: ['hidden'],
+    render: () => ({
+        props: {
+            label: 'StorybookHostComponent',
+            primary: true
+        }
+    })
 };

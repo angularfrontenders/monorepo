@@ -4,15 +4,14 @@ import { IInvoice } from '../../../iInvoice';
 import { ICreateHeaderCommand } from './iCreateHeaderCommand';
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root'
 })
 export class CreateHeaderCommandBuilderService {
-
-  public build(invoice: IInvoice): ICreateHeaderCommand {
-    return {
-      invoiceDate: invoice.invoiceDate,
-      invoiceNumber: invoice.invoiceNumber,
-      totalAmount: invoice.totalAmount
-    };
-  }
+    public build(invoice: IInvoice): ICreateHeaderCommand {
+        return {
+            invoiceDate: invoice.invoiceDate,
+            invoiceNumber: invoice.invoiceNumber,
+            totalAmount: invoice.totalAmount
+        };
+    }
 }

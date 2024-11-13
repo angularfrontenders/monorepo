@@ -4,7 +4,6 @@ import { IInvoice } from './iInvoice';
 import { IInvoiceBuilder } from './iInvoiceBuilder';
 
 export class InvoiceBuilder extends BuilderTemplate<IInvoice> implements IInvoiceBuilder {
-
     protected initialize(): IInvoice {
         return {
             invoiceDate: new Date(),

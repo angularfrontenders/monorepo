@@ -3,60 +3,57 @@ import { Injectable } from '@angular/core';
 import { DataService } from './data.service';
 
 export interface ITextResource {
-  key: string;
-  value: string;
-  notFound?: boolean;
+    key: string;
+    value: string;
+    notFound?: boolean;
 }
 
 @Injectable()
 export class ResourcesService {
-  private _dictionary: Array<ITextResource> = [];
+    private _dictionary: Array<ITextResource> = [];
 
-  public constructor(private _dataService: DataService) {}
+    public constructor(private _dataService: DataService) {}
 
-  public load() {
-    this._dictionary = [];
-    return new Promise((resolve) => {
-      this._dataService.getResources().subscribe(
-        (resources: Array<ITextResource>) => {
-          this._dictionary = resources;
-          resolve(true);
-        },
-        () => {
-          console.log('not server found. Get default resources...');
-          this._dictionary = [
-            {
-              key: 'TITLE',
-              value: 'Welcome to Literals!'
-            },
-            {
-              key: 'HELLO.WORLD',
-              value: 'Hello world!'
-            },
-            {
-              key: 'FORMATS',
-              value:
-                'this is a formats test {0:k} -> string: {1}; date: {2:d}; currency: {3:c}; number: {4:n}'
-            },
-            { key: 'ANGULARFRONTENDERS', value: 'Angular Frontenders' }
-          ];
-          resolve(true);
-        }
-      );
-    });
-  }
+    public load() {
+        this._dictionary = [];
+        return new Promise((resolve) => {
+            this._dataService.getResources().subscribe(
+                (resources: Array<ITextResource>) => {
+                    this._dictionary = resources;
+                    resolve(true);
+                },
+                () => {
+                    console.log('not server found. Get default resources...');
+                    this._dictionary = [
+                        {
+                            key: 'TITLE',
+                            value: 'Welcome to Literals!'
+                        },
+                        {
+                            key: 'HELLO.WORLD',
+                            value: 'Hello world!'
+                        },
+                        {
+                            key: 'FORMATS',
+                            value: 'this is a formats test {0:k} -> string: {1}; date: {2:d}; currency: {3:c}; number: {4:n}'
+                        },
+                        { key: 'ANGULARFRONTENDERS', value: 'Angular Frontenders' }
+                    ];
+                    resolve(true);
+                }
+            );
+        });
+    }
 
-  public get(key: string): ITextResource {
-    const resourceFound = this._dictionary.find(
-      (resource: ITextResource) => resource.key === key
-    );
+    public get(key: string): ITextResource {
+        const resourceFound = this._dictionary.find((resource: ITextResource) => resource.key === key);
 
-    return (
-      resourceFound || {
-        key,
-        notFound: true,
-        value: `[[resource: "${key}" not found!]]`
-      }
-    );
-  }
+        return (
+            resourceFound || {
+                key,
+                notFound: true,
+                value: `[[resource: "${key}" not found!]]`
+            }
+        );
+    }
 }

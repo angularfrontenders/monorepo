@@ -1,7 +1,7 @@
 import { ClonableTemplate } from './clonableTemplate';
 import { Memento } from '../memento/memento';
 
-export abstract class MementoTemplate<T> extends ClonableTemplate<T>{
+export abstract class MementoTemplate<T> extends ClonableTemplate<T> {
     private _mementos: Array<Memento<T>> = [];
 
     protected addMemento(model: T | undefined): void {
@@ -13,6 +13,4 @@ export abstract class MementoTemplate<T> extends ClonableTemplate<T>{
         const memento = this._mementos.pop();
         return memento?.getMemento();
     }
-
-
 }

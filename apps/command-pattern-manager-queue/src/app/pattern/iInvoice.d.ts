@@ -1,5 +1,5 @@
 interface IIdentity<T> {
-    id?: T
+    id?: T;
 }
 
 export interface IInvoice extends IIdentity<number> {

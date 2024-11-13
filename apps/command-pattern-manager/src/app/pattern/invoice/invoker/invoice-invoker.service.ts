@@ -7,21 +7,19 @@ import { CommandName } from '../commands/commands';
 import { CommandManagerService } from '../command-manager/command-manager.service';
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root'
 })
 export class InvoiceInvokerService extends InvokerService implements IInvoiceInvokerService {
-
-  public constructor(private _commandManagerService: CommandManagerService) {
-    super();
-  }
-
-  public async invokeInvoiceCommand(commandName: CommandName): Promise<void> {
-    const command: ICommandService | undefined = this._commandManagerService.getCommand(commandName);
-    if (!command) {
-      throw new Error('No command found!');
+    public constructor(private _commandManagerService: CommandManagerService) {
+        super();
     }
-    this.setCommand(command);
-    await this.invoke();
-  }
 
+    public async invokeInvoiceCommand(commandName: CommandName): Promise<void> {
+        const command: ICommandService | undefined = this._commandManagerService.getCommand(commandName);
+        if (!command) {
+            throw new Error('No command found!');
+        }
+        this.setCommand(command);
+        await this.invoke();
+    }
 }

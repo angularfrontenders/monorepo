@@ -14,4 +14,4 @@ import * as strategies from './strategies/index';
         { provide: strategies.StrategyToken, useClass: strategies.HumidStrategy, multi: true }
     ]
 })
-export class PatternModule { }
+export class PatternModule {}

@@ -5,19 +5,17 @@ import { LaundryComplement } from './pattern/complements/laundryComplement';
 import { BigTowelComplement } from './pattern/complements/bigTowelComplement';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  public title = 'Decorator pattern';
-  public subscriber: SubscriberTemplate;
+    public title = 'Decorator pattern';
+    public subscriber: SubscriberTemplate;
 
-
-  public ngOnInit(): void {
-    this.subscriber = new VipSubscriber(200)
-    this.subscriber = new LaundryComplement(this.subscriber, 100);
-    this.subscriber = new BigTowelComplement(this.subscriber, 10);
-  }
-
+    public ngOnInit(): void {
+        this.subscriber = new VipSubscriber(200);
+        this.subscriber = new LaundryComplement(this.subscriber, 100);
+        this.subscriber = new BigTowelComplement(this.subscriber, 10);
+    }
 }

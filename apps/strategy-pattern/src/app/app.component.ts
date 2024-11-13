@@ -22,7 +22,7 @@ export class AppComponent implements OnInit {
     };
     zones = Array<IClimateZone>();
 
-    public constructor(private _contextService: ContextService) { }
+    public constructor(private _contextService: ContextService) {}
 
     ngOnInit(): void {
         this.zones = Array<IClimateZone>();

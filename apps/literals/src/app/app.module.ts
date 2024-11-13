@@ -13,21 +13,21 @@ import localeES from '@angular/common/locales/es';
 registerLocaleData(localeES, 'es-ES');
 
 export function resourcesProviderFactory(provider: ResourcesService) {
-  return () => provider.load();
+    return () => provider.load();
 }
 
 @NgModule({
-  declarations: [AppComponent],
-  imports: [BrowserModule, AppRoutingModule, ResourcesModule, TranslateModule],
-  providers: [
-    { provide: LOCALE_ID, useValue: 'es-ES' },
-    {
-      provide: APP_INITIALIZER,
-      useFactory: resourcesProviderFactory,
-      deps: [ResourcesService],
-      multi: true
-    }
-  ],
-  bootstrap: [AppComponent]
+    declarations: [AppComponent],
+    imports: [BrowserModule, AppRoutingModule, ResourcesModule, TranslateModule],
+    providers: [
+        { provide: LOCALE_ID, useValue: 'es-ES' },
+        {
+            provide: APP_INITIALIZER,
+            useFactory: resourcesProviderFactory,
+            deps: [ResourcesService],
+            multi: true
+        }
+    ],
+    bootstrap: [AppComponent]
 })
 export class AppModule {}

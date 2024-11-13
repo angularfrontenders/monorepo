@@ -4,17 +4,16 @@ import { IInvoice } from '../../../iInvoice';
 import { IModifyTotalAmountCommand } from './iModifyTotalAmountCommand';
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root'
 })
 export class ModifyTotalAmountCommandBuilderService {
-
-  public build(invoice: IInvoice): IModifyTotalAmountCommand {
-    if (invoice?.id === undefined){
-      throw new Error('no invoice id');
+    public build(invoice: IInvoice): IModifyTotalAmountCommand {
+        if (invoice?.id === undefined) {
+            throw new Error('no invoice id');
+        }
+        return {
+            id: invoice.id,
+            totalAmount: invoice.totalAmount
+        };
     }
-    return {
-      id: invoice.id,
-      totalAmount: invoice.totalAmount
-    };
-  }
 }

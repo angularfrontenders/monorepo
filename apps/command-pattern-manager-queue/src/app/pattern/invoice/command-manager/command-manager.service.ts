@@ -8,22 +8,18 @@ import { CreateHeaderCommandService } from '../commands/create-header/create-hea
 import { ModifyTotalAmountCommandService } from '../commands/modify-total-amount/modify-total-amount-command.service';
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root'
 })
 export class CommandManagerService implements ICommandManagerService {
+    private _commands: Array<ICommandService> = [];
 
-  private _commands: Array<ICommandService> = [];
+    public constructor(
+        _createHeaderCommandService: CreateHeaderCommandService,
+        _modifyTotalAmountCommandService: ModifyTotalAmountCommandService
+    ) {
+        this._commands = [_createHeaderCommandService, _modifyTotalAmountCommandService];
+    }
 
-  public constructor(
-    _createHeaderCommandService: CreateHeaderCommandService,
-    _modifyTotalAmountCommandService: ModifyTotalAmountCommandService) {
-    this._commands = [
-        _createHeaderCommandService,
-        _modifyTotalAmountCommandService
-    ];
-  }
-
-  public getCommand = (commandName: CommandName): ICommandService | undefined =>
-    this._commands.find((command: ICommandService) => command.getCommandName() === commandName)
-
+    public getCommand = (commandName: CommandName): ICommandService | undefined =>
+        this._commands.find((command: ICommandService) => command.getCommandName() === commandName);
 }

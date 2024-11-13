@@ -13,34 +13,32 @@ import { IResultCommand } from '../../../iResultCommand';
 import { CommandName } from '../commands';
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root'
 })
 export class CreateHeaderCommandService implements ICommandService {
+    public constructor(
+        private _modelService: ModelService,
+        private _validatorService: ValidatorService,
+        private _createHeaderCommandBuilderService: CreateHeaderCommandBuilderService,
+        private _createHeaderCommandDataService: CreateHeaderCommandDataService
+    ) {}
 
-  public constructor(
-    private _modelService: ModelService,
-    private _validatorService: ValidatorService,
-    private _createHeaderCommandBuilderService: CreateHeaderCommandBuilderService,
-    private _createHeaderCommandDataService: CreateHeaderCommandDataService) {
-  }
+    public getCommandName = () => CommandName.CreateHeader;
 
-  public getCommandName = () => CommandName.CreateHeader;
+    public async execute(): Promise<void> {
+        // Get model
+        const invoice: IInvoice = this._modelService.getModel();
 
-  public async execute(): Promise<void> {
-    // Get model
-    const invoice: IInvoice = this._modelService.getModel();
-
-    // Validate model
-    if (this._validatorService.validate(invoice).length === 0) {
-      // Build command
-      const command: ICreateHeaderCommand = this._createHeaderCommandBuilderService.build(invoice);
-      // Send command
-      try {
-          const result: IResultCommand = await this._createHeaderCommandDataService.send(command);
-      } catch (Error) {
-          console.log('Error');
-      }
+        // Validate model
+        if (this._validatorService.validate(invoice).length === 0) {
+            // Build command
+            const command: ICreateHeaderCommand = this._createHeaderCommandBuilderService.build(invoice);
+            // Send command
+            try {
+                const result: IResultCommand = await this._createHeaderCommandDataService.send(command);
+            } catch (Error) {
+                console.log('Error');
+            }
+        }
     }
-  }
-
 }
