@@ -1,0 +1,49 @@
+.wrapper {
+    display: grid;
+    grid-template-areas:
+        "header header header"
+        "nav article article"
+        "footer footer footer";
+    grid-template-rows: 80px 1fr 50px;
+    grid-template-columns: 10% 2fr;
+    gap: 2px;
+    height: 100vh;
+    margin: 0;
+}
+
+header,
+footer,
+article,
+nav {
+    padding: 1em;
+    background: #bae0e2;
+}
+
+header {
+    grid-area: header;
+}
+
+footer {
+    grid-area: footer;
+}
+
+article {
+    grid-area: article;
+}
+
+nav {
+    grid-area: nav;
+}
+
+/* Stack the layout on small devices/viewports. */
+@media all and (max-width: 575px) {
+    .wrapper {
+        grid-template-areas:
+            "header"
+            "nav"
+            "article"
+            "footer";
+        grid-template-rows: 80px 50px 1fr 50px;
+        grid-template-columns: 1fr;
+    }
+}
