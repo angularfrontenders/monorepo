@@ -1,0 +1,11 @@
+.header {
+    display: flex;
+    align-items: center;
+    gap: 30px
+}
+
+.title {
+    color: brown;
+    font-weight: bolder;
+    font-size: larger;
+}

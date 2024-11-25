@@ -19,6 +19,7 @@
     "lib": ["es2018", "dom"],
     "paths": {
       "@af/buttons": ["libs/buttons/src/index.ts"],
+      "@af/layouts": ["libs/layouts/src/index.ts"],
       "storybook-host": ["libs/storybook-host/src/index.ts"]
     },
     "rootDir": ".",

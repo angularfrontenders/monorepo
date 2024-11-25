@@ -34,14 +34,20 @@
       "cache": true,
       "dependsOn": ["^build"],
       "inputs": ["default", "^default"]
+    },
+    "@angular-devkit/build-angular:application": {
+      "cache": true,
+      "dependsOn": ["^build"],
+      "inputs": ["default", "^default"]
     }
   },
   "defaultBase": "master",
   "generators": {
     "@nx/angular:application": {
-      "style": "css",
+      "e2eTestRunner": "none",
       "linter": "eslint",
-      "e2eTestRunner": "none"
+      "style": "css",
+      "unitTestRunner": "none"
     },
     "@nx/angular:library": {
       "linter": "eslint",

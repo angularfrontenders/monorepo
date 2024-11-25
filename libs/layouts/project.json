@@ -1,0 +1,29 @@
+{
+  "name": "layouts",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/layouts/src",
+  "prefix": "lib",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/angular:package",
+      "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
+      "options": {
+        "project": "libs/layouts/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/layouts/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/layouts/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    }
+  }
+}
