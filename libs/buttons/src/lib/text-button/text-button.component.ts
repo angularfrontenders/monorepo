@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { InvisibleComponentDirective } from '@af/utils';
 
 export type buttonType = 'primary' | 'secondary';
 
@@ -13,7 +14,8 @@ export type buttonType = 'primary' | 'secondary';
     standalone: true,
     imports: [CommonModule],
     templateUrl: './text-button.component.html',
-    styleUrl: './text-button.component.scss'
+    styleUrl: './text-button.component.scss',
+    hostDirectives: [{ directive: InvisibleComponentDirective }]
 })
 export class TextButtonComponent {
     @Input() label = '';
