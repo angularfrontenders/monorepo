@@ -1,0 +1,15 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "nx",
+      "project": "",
+      "command": "run",
+      "positional": "debugging-karma:test",
+      "flags": ["--watch"],
+      "problemMatcher": [],
+      "label": "nx: nx run debugging-karma:test"
+    }
+  ]
+}
+
